@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define gc getchar_unlocked
-#define fo(i, n) for (int i = 0; i < n; i++)
+#define fo(i, n) for (ll i = 0; i < n; i++)
 #define Fo(i, k, n) for (i = k; k < n ? i < n : i > n; k < n ? i += 1 : i -= 1)
 #define ll long long
 #define deb(x) cout << #x << "=" << x << endl
@@ -18,9 +18,9 @@ using namespace std;
 #define PI 3.1415926535897932384626
 #define mod 1000000007
 #define hk ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-typedef pair<int, int> pii;
+typedef pair<ll, ll> pii;
 typedef pair<ll, ll> pl;
-typedef vector<int> vi;
+typedef vector<ll> vi;
 typedef vector<ll> vl;
 typedef vector<pii> vpii;
 typedef vector<pl> vpl;
@@ -29,22 +29,32 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-   string s;
-   cin>>s;
-   string tmp="hello";
-   int a=0;
-   for (int  i = 0; i < s.size(); i++)
-   {
-     if(s[i]==tmp[a])
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        a++;
-    }
-   }
-   if(a==5)
-   cout<<"YES";
-   else
-   cout<<"NO";
+        ll n ;
+        cin>>n;
+        ll arr[n];
+        for (ll i = 0; i < n; i++)
+        {
+            cin>>arr[i];
+        }
 
-   
+        if(is_sorted(arr,arr+n))
+        {       
+            int min=arr[1]-arr[0];
+            for (ll i = 0; i < n-1; i++)
+            {
+                ll dif=arr[i+1]-arr[i];
+                if(dif<min)
+                min=dif;
+            }
+                cout<<min/2+1<<endl;   
+        }
+        else
+        cout<<0<<endl;
+        
+    }
     return 0;
 }

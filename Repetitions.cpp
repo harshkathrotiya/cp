@@ -30,13 +30,29 @@ int main()
 {
     hk
    string s;
-   vector<int> v={1,2,24,5,6,4};
+    vi v;
    cin>>s;
-   int n=s.size();
-   for(int i=0;i<n;i++)
-   {
-
+   int n=s.size(),maxs=0;
+   for(int i=0;i<n-1;i++)
+   {    
+        int count=1;
+       for (int j=i+1; j<n; j++)
+       {
+            if(s[i]==s[j])
+            {
+            count++;
+            if(count>maxs)
+            maxs=count+1;
+            }
+            else
+            {maxs=max(count,maxs);
+            }
+            break;
+            
+       }
+       
    }
+   cout<<maxs;
 
     return 0;
 }

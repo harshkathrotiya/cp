@@ -29,22 +29,27 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-   string s;
-   cin>>s;
-   string tmp="hello";
-   int a=0;
-   for (int  i = 0; i < s.size(); i++)
-   {
-     if(s[i]==tmp[a])
+    string s;
+    cin>>s;
+    bool b=1;
+    for (int i = 0; i < s.size(); i++)  
     {
-        a++;
+        if(s[i]=='W'&&s[i+1]=='U'&&s[i+2]=='B')
+        {
+            i+=2;
+            if(!b)
+            {
+                cout<<" ";
+                b=1;
+            }
+            continue;
+        } 
+        else
+        {
+            b=0;
+            cout<<s[i];
+        }
     }
-   }
-   if(a==5)
-   cout<<"YES";
-   else
-   cout<<"NO";
 
-   
     return 0;
 }

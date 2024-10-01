@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <bits/stdc++.h>
+#include<map>
 using namespace std;
 #define gc getchar_unlocked
 #define fo(i, n) for (int i = 0; i < n; i++)
@@ -29,22 +30,39 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-   string s;
-   cin>>s;
-   string tmp="hello";
-   int a=0;
-   for (int  i = 0; i < s.size(); i++)
-   {
-     if(s[i]==tmp[a])
+    int t;
+    cin >> t;
+    while (t--)
     {
-        a++;
+        int n;
+        cin>>n;
+        vi v;
+        for (int i = 0; i < n; i++)
+        {
+            int x;
+            cin>>x;
+            v.pb(x);
+        }
+        map<char,int> mp;
+        for (char i ='a'; i <= 'z'; i++)
+        {
+            mp[i]==0;
+        }
+        for(int i:v)
+        {
+            for (char j = 'a'; j <='z'; j++)
+            {
+                if(mp[j]==i)
+                {
+                    cout<<j;
+                    mp[j]++;
+                    break;
+                }
+            }
+            
+        }
+        cout<<endl;
+        
     }
-   }
-   if(a==5)
-   cout<<"YES";
-   else
-   cout<<"NO";
-
-   
     return 0;
 }

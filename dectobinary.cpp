@@ -26,25 +26,24 @@ typedef vector<pii> vpii;
 typedef vector<pl> vpl;
 typedef vector<vi> vvi;
 typedef vector<vl> vvl;
+string dectobin(int n)
+{
+
+    string s;
+    while (n > 0)
+    {
+        s+=n%2+'0';
+        n=n/2;
+    }
+    reverse(s.begin(),s.end());
+    return s;
+}
 int main()
 {
     hk
-   string s;
-   cin>>s;
-   string tmp="hello";
-   int a=0;
-   for (int  i = 0; i < s.size(); i++)
-   {
-     if(s[i]==tmp[a])
-    {
-        a++;
-    }
-   }
-   if(a==5)
-   cout<<"YES";
-   else
-   cout<<"NO";
-
-   
+    int n;
+    cin>>n;
+    string s =dectobin(n);
+    cout<<s;
     return 0;
 }

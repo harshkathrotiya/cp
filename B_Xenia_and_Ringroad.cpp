@@ -26,25 +26,27 @@ typedef vector<pii> vpii;
 typedef vector<pl> vpl;
 typedef vector<vi> vvi;
 typedef vector<vl> vvl;
+
 int main()
 {
-    hk
-   string s;
-   cin>>s;
-   string tmp="hello";
-   int a=0;
-   for (int  i = 0; i < s.size(); i++)
-   {
-     if(s[i]==tmp[a])
-    {
-        a++;
-    }
-   }
-   if(a==5)
-   cout<<"YES";
-   else
-   cout<<"NO";
+    int n, m;
+    scanf("%d%d", &n, &m);
 
-   
+    ll loc = 1;
+    ll ans = 0;
+    for(int i=0;i<m;i++)
+    {
+        int now;
+        cin>>now;;
+
+        if(now>=loc)
+            ans+=now-loc;
+        else
+            ans+=n-(loc-now);
+        loc=now;
+    }
+
+    cout<<ans<<endl;
+
     return 0;
 }

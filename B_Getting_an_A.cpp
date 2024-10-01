@@ -26,25 +26,42 @@ typedef vector<pii> vpii;
 typedef vector<pl> vpl;
 typedef vector<vi> vvi;
 typedef vector<vl> vvl;
-int main()
-{
-    hk
-   string s;
-   cin>>s;
-   string tmp="hello";
-   int a=0;
-   for (int  i = 0; i < s.size(); i++)
-   {
-     if(s[i]==tmp[a])
+int main() {
+    int n;
+    cin>>n;
+    vi v(n);
+    for (int i=0;i<n;i++) 
     {
-        a++;
+        cin>>v[i];
     }
-   }
-   if(a==5)
-   cout<<"YES";
-   else
-   cout<<"NO";
+    sort(v.begin(),v.end());
+    double csum=0;
+    for (int i:v) 
+    {
+        csum+=i;
+    }
+    double cavg=csum/n;
+    if (cavg>=4.5)
+    {
+        cout<<0<<endl; 
+        return 0;
+    }
+    int redos=0;
+    for(int i=0;i<n;i++) 
+    {
+        csum=csum-v[i]+5;
+        double newavg=csum/n;
+        
+        ++redos;
+        
+        if (newavg>=4.5) 
+        {
+            cout<<redos<<endl;
+            
+            return 0;
+        }
+    }
+    cout<<redos<<endl;
 
-   
     return 0;
 }
