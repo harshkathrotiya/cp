@@ -29,16 +29,35 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-    int t,n=INT_MAX;
+    int t;
     cin >> t;
-    int a,p,sum=0;
-        
     while (t--)
     {
-        cin>>a>>p;
-        n=min(p,n);
-        sum+=a*n;
+        int a,b,c,d,n;
+        cin>>a>>b>>c>>n;
+        int largest =(a>b)?((a>c)?a:c):((b>c)?b:c);
+        if (largest==a)
+        {
+            d=(a-b)+(a-c);
+        }
+        else if (largest==b)
+        {
+             d=(b-c)+(b-a);
+        }
+        else if (largest==c)
+        {
+             d=(c-b)+(c-a);
+        }
+        if((n-d)%3==0 && (n-d)>=0)
+        {
+            
+            cout<<"YES"<<endl;
+        }
+        else 
+        {
+            cout<<"NO"<<endl;
+        }
+
     }
-    cout<<sum;
     return 0;
-}q
+}

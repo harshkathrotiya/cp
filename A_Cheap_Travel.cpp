@@ -29,16 +29,18 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-    int t,n=INT_MAX;
-    cin >> t;
-    int a,p,sum=0;
-        
-    while (t--)
-    {
-        cin>>a>>p;
-        n=min(p,n);
-        sum+=a*n;
-    }
-    cout<<sum;
+   int n,m,a,b;
+   cin>>n>>m>>a>>b;
+   if((m*a)<=b)
+   {
+   cout<<n*a;
+   }
+   else
+   {
+    int x=n/m;
+    cout<<x*b+min((n%m)*a,b);
+   }
+
+
     return 0;
-}q
+}

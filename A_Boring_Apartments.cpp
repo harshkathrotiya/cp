@@ -26,30 +26,18 @@ typedef vector<pii> vpii;
 typedef vector<pl> vpl;
 typedef vector<vi> vvi;
 typedef vector<vl> vvl;
-int main()
-{
-    hk
+
+int main(){
+    hk 
     int t;
-    cin >> t;
-    vector<char>v;
-      for (char ch='1';ch<='9';ch++)
-       {
-       
-        
-        for (int i = 0;i<10;i++)
-        {
-            v.push_back(ch);
-        }
-    }
-    for (int i = 0; i < v.size(); i++)
+    cin>>t;
+    while(t--)
     {
-        cout<<v[i];
-    }
-    
-    while (t--)
-    {
-        
+        string x;
+        cin>>x;
+        int a=x[0]-'0'-1;
+        int len=x.size();
+        cout<<a*10+(len*(len+1))/2<<endl;
     }
     return 0;
 }
-

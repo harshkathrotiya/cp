@@ -29,16 +29,15 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-    int t,n=INT_MAX;
+    int t;
     cin >> t;
-    int a,p,sum=0;
-        
     while (t--)
     {
-        cin>>a>>p;
-        n=min(p,n);
-        sum+=a*n;
+        int a,b,c;
+        cin>>a>>b>>c;
+        int m=max(a,max(b,c));
+        int mi=min(a,min(b,c));
+        cout<<a+b+c-m-mi<<endl;
     }
-    cout<<sum;
     return 0;
-}q
+}
