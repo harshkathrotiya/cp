@@ -33,16 +33,29 @@ int main()
     cin >> t;
     while (t--)
     {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
+        int n;
+        cin>>n;
+        int a[n],b[n];
+        for (int i = 0; i < n; i++)
         {
-            n-=min(n,k-1);
-            ans++;
+            cin>>a[i];
         }
-    cout<<ans<<endl;
+        for (int i = 0; i < n; i++)
+        {
+            cin>>b[i];
+        }
+        int dif=0;
+        for (int i = 0; i < n-1; i++)
+        {
+            if(a[i]-b[i+1]>0)
+            {
+                dif+=a[i];
+                dif-=b[i+1];
+            }
+        }
+        dif+=a[n-1];
+        cout<<dif<<endl;
+        
     }
     return 0;
 }

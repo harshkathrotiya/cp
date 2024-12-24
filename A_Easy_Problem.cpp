@@ -33,16 +33,9 @@ int main()
     cin >> t;
     while (t--)
     {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
-        {
-            n-=min(n,k-1);
-            ans++;
-        }
-    cout<<ans<<endl;
+        int n;
+        cin>>n;
+        cout<<n-1<<endl;
     }
     return 0;
 }

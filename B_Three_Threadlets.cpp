@@ -33,16 +33,26 @@ int main()
     cin >> t;
     while (t--)
     {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
+        int a,b,c;
+        cin>>a>>b>>c;
+        int arr[3]={a,b,c};
+        sort(arr,arr+3);
+        a=arr[0];
+        b=arr[1];
+        c=arr[2];
+        if(a==b&&b==c)
         {
-            n-=min(n,k-1);
-            ans++;
+            cout<<"YES"<<endl;
         }
-    cout<<ans<<endl;
+        else if(b%a==0 && c%a==0 &&((b/a-1)+(c/a-1)<=3) )
+        {
+            cout<<"YES"<<endl;
+        }
+        else
+        {
+            cout<<"NO"<<endl;
+        }
+
     }
     return 0;
 }

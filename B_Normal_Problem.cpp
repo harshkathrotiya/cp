@@ -31,18 +31,30 @@ int main()
     hk
     int t;
     cin >> t;
-    while (t--)
+    while (t--) 
     {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
-        {
-            n-=min(n,k-1);
-            ans++;
+        string a;
+       cin>>a;
+
+        string b;
+        for (int i=a.length()-1;i>=0;i--)
+         {
+            char c=a[i];
+            if (c=='p') 
+            {
+                b+='q'; 
+            } 
+            else if (c=='q') 
+            {
+                b+='p';  
+            } 
+            else if (c=='w') 
+            {
+                b+='w';
+            }
         }
-    cout<<ans<<endl;
+
+        cout<<b<<endl; // Output the transformed string
     }
     return 0;
 }

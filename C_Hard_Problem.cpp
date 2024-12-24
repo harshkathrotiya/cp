@@ -31,18 +31,15 @@ int main()
     hk
     int t;
     cin >> t;
-    while (t--)
-    {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
-        {
-            n-=min(n,k-1);
-            ans++;
-        }
-    cout<<ans<<endl;
+    while(t--) {
+        int m,a,b,c;
+        cin>>m>>a>>b>>c;
+       int r1=min(a,m);         
+        int r2= min(b,m);       
+        int rs =2*m-(r1+r2);  
+        int r3=min(c,rs); 
+        
+        cout << r1+r2+r3<<endl;
     }
     return 0;
 }

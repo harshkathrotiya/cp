@@ -30,19 +30,42 @@ int main()
 {
     hk
     int t;
-    cin >> t;
-    while (t--)
+    cin>>t;
+    while(t--)
     {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
+        int n,a,b,c;
+        cin>>n>>a>>b>>c;
+        int tot=a+b+c;
+        int days=0;
+        days+=(n/tot)*3;
+        n%=tot;
+        if(n<=0)
         {
-            n-=min(n,k-1);
-            ans++;
+            cout<<days<<endl;
+            continue;
         }
-    cout<<ans<<endl;
+        days++;
+        n-=a;
+        if(n<=0)
+        {
+            cout<<days<<endl;
+            continue;
+        }
+        
+        days++;
+        n-=b;
+        if(n<=0)
+        {
+            cout<<days<<endl;
+            continue;
+        }
+        days++;
+        n-=c;
+        if(n<=0)
+        {
+            cout<<days<<endl;
+            continue;
+        }
     }
     return 0;
 }

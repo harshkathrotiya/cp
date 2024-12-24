@@ -31,18 +31,26 @@ int main()
     hk
     int t;
     cin >> t;
+    int m=0,c=0;
     while (t--)
     {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
+        int a,b;
+        cin>>a>>b;
+        if(a>b)
+        m++;
+        if(b>a)
+        c++;
+        if(a==b)
         {
-            n-=min(n,k-1);
-            ans++;
+            m++;
+            c++;
         }
-    cout<<ans<<endl;
     }
+    if(m>c)
+    cout<<"Mishka";
+    else if(c>m)
+    cout<<"Chris";
+    elseq
+    cout<<"Friendship is magic!^^";
     return 0;
 }

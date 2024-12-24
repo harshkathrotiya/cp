@@ -33,16 +33,33 @@ int main()
     cin >> t;
     while (t--)
     {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
+        int n, m;
+    cin >> n >> m;
+
+    int ans = 0;
+    for (int i=0;i<n;i++)
+    {
+        string s;
+        cin>>s;
+
+        if(s.length()<m) 
         {
-            n-=min(n,k-1);
-            ans++;
+            m-=s.length();
+            ans += 1;
+        } 
+        else 
+        {
+           
+            for (int j=i+1;j<n;j++) 
+            {
+                cin>>s;
+            }
+            break;
         }
+    }
+
     cout<<ans<<endl;
+        
     }
     return 0;
 }

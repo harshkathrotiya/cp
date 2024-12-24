@@ -29,20 +29,24 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-    int t;
-    cin >> t;
-    while (t--)
-    {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
-        {
-            n-=min(n,k-1);
-            ans++;
-        }
-    cout<<ans<<endl;
+   int n,ans=0;
+   cin>>n;
+   vector<pl> v(n);
+
+   for (int i=0; i < n; ++i) {
+        cin >> v[i].first;
+        v[i].second = i + 1;
     }
+    sort(v.rbegin(),v.rend());
+    vi rlt(n);
+    for (int i = 0; i < n; i++)
+    {
+        rlt[i]=v[i].second;
+        ans+=i*v[i].first+1;
+    }
+    cout<<ans<<endl;
+    for(auto i:rlt)
+    cout<<i<<" ";
+    
     return 0;
 }

@@ -28,21 +28,20 @@ typedef vector<vi> vvi;
 typedef vector<vl> vvl;
 int main()
 {
-    hk
-    int t;
-    cin >> t;
-    while (t--)
+    ll n;
+    cin>>n;
+    ll arr[n];
+    for(int i=0;i<n;i++)
     {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
-        {
-            n-=min(n,k-1);
-            ans++;
-        }
-    cout<<ans<<endl;
+        cin>>arr[i];        
     }
+    ll a=arr[n-1],ans=a;
+    for(ll i=n-2;i>=0;i--)
+    {
+        a=min(arr[i],a-1);
+        if(a<0)a=0;
+        ans+=a;
+    }
+    cout<<ans<<endl;
     return 0;
 }

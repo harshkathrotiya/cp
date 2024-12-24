@@ -29,20 +29,26 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-    int t;
-    cin >> t;
-    while (t--)
+    string num;
+    cin>>num;c
+    for (int i = 0; i < num.size(); i++)
     {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
-        {
-            n-=min(n,k-1);
-            ans++;
-        }
-    cout<<ans<<endl;
+            if(num[i]!='1' && num[i]!='4')
+            {
+                cout<<"NO";
+                return 0;
+            }            
     }
+    if(num[0]=='4')
+   {
+    cout<<"NO";
     return 0;
-}
+   }
+    if(num.find("444") !=num.npos)
+    {
+        cout<<"NO";
+        return 0;
+    }
+    cout<<"YES";
+    return 0;
+}cde

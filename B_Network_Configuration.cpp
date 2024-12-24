@@ -29,20 +29,19 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-    int t;
-    cin >> t;
-    while (t--)
+    int n,k;
+    cin>>n>>k;
+    vi v;
+    for (int i = 0; i < n; i++)
     {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
-        {
-            n-=min(n,k-1);
-            ans++;
-        }
-    cout<<ans<<endl;
+            int x;
+            cin>>x;
+            v.pb(x);
     }
+    sort(v.begin(),v.end());
+    cout<<v[n-k];
+
+
+
     return 0;
 }

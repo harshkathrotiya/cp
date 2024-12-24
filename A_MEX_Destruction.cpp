@@ -32,17 +32,45 @@ int main()
     int t;
     cin >> t;
     while (t--)
-    {
- 
-        int ans=0;
-        int n, k;
-        cin>>n>>k;
-        while(n && n!=1)
-        {
-            n-=min(n,k-1);
-            ans++;
+    {   
+        int n ;
+        cin>>n;
+        vi v(n);
+       bool allzero=true;
+
+       for(int i=0;i<n;i++) 
+       {
+            int x;
+            cin>>v[i];
+            if(v[i]!=0) 
+            {
+                allzero=false;
+            }
         }
-    cout<<ans<<endl;
-    }
+
+        if(allzero)
+        {
+            cout<<0<<endl;
+            continue;
+        }
+        bool is_cont=true;
+        int lindex=-1;
+       for (int i = 0; i < n; i++) 
+       {
+            if (v[i] != 0) {
+                if (lindex != -1 &&i!=lindex+1) 
+                {
+                    is_cont = false;
+                    break;
+                }
+                lindex = i;  
+            }
+        }
+        if (is_cont) {
+            cout << 1 << endl;  
+        } else {
+            cout << 2 << endl; 
+        }
+    }      
     return 0;
 }
