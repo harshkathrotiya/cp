@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define gc getchar_unlocked
-#define fo(i, n) for (i = 0; i < n; i++)
+#define fo(i, n) for (int i = 0; i < n; i++)
 #define Fo(i, k, n) for (i = k; k < n ? i < n : i > n; k < n ? i += 1 : i -= 1)
 #define ll long long
 #define deb(x) cout << #x << "=" << x << endl
@@ -15,8 +15,9 @@ using namespace std;
 #define clr(x) memset(x, false, sizeof(x))
 #define sortall(x) sort(all(x))
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); it++)
-#define PI 3.1415926535897932384626
+#define PI 3.14d926535897932384626
 #define mod 1000000007
+#define hk ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pl;
 typedef vector<int> vi;
@@ -27,21 +28,22 @@ typedef vector<vi> vvi;
 typedef vector<vl> vvl;
 int main()
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t,s=0;
+    hk
+    int t;
     cin >> t;
-    int count=0;
     while (t--)
     {
-        int a ,b,c;
-        cin>>a>>b>>c;
-        int sm=a+b+c;
-        if(sm>=2)
-        s++;
+        int a1,a2,a4,a5;
+        cin>>a1>>a2>>a4>>a5;
+          int maxs = 0;
+          int a3 = a1+a2;
+        maxs = max(maxs,(a3==a1+a2)+(a4==a2+a3)+(a5==a3+a4));
+        a3 = a4 - a2;
+        maxs = max(maxs,(a3==a1+a2)+(a4==a2+a3)+(a5==a3+a4));
+        a3 = a5 - a4;
+        maxs = max(maxs,(a3==a1+a2)+(a4==a2+a3) +(a5==a3+a4));
 
+        cout << maxs<<endl;
     }
-    cout<<s;
     return 0;
 }

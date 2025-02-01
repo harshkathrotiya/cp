@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define gc getchar_unlocked
-#define fo(i, n) for (i = 0; i < n; i++)
+#define fo(i, n) for (int i = 1; i <= n; i++)
 #define Fo(i, k, n) for (i = k; k < n ? i < n : i > n; k < n ? i += 1 : i -= 1)
 #define ll long long
 #define deb(x) cout << #x << "=" << x << endl
@@ -17,6 +17,7 @@ using namespace std;
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); it++)
 #define PI 3.1415926535897932384626
 #define mod 1000000007
+#define hk ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pl;
 typedef vector<int> vi;
@@ -27,21 +28,20 @@ typedef vector<vi> vvi;
 typedef vector<vl> vvl;
 int main()
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t,s=0;
-    cin >> t;
-    int count=0;
-    while (t--)
+    hk
+    int n;
+    cin>>n;
+    if(n%2==1)
     {
-        int a ,b,c;
-        cin>>a>>b>>c;
-        int sm=a+b+c;
-        if(sm>=2)
-        s++;
-
+        cout<<-1;
+        return 0;
     }
-    cout<<s;
+    fo(i,n)
+    {
+        if(i%2==0)
+        cout<<i-1<<" ";
+        else
+        cout<<i+1<<" ";
+    }
     return 0;
 }

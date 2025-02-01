@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define gc getchar_unlocked
-#define fo(i, n) for (i = 0; i < n; i++)
+#define fo(i, n) for (int i = 0; i < n; i++)
 #define Fo(i, k, n) for (i = k; k < n ? i < n : i > n; k < n ? i += 1 : i -= 1)
 #define ll long long
 #define deb(x) cout << #x << "=" << x << endl
@@ -17,6 +17,7 @@ using namespace std;
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); it++)
 #define PI 3.1415926535897932384626
 #define mod 1000000007
+#define hk ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pl;
 typedef vector<int> vi;
@@ -27,21 +28,27 @@ typedef vector<vi> vvi;
 typedef vector<vl> vvl;
 int main()
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t,s=0;
+    hk
+    ll t;
     cin >> t;
-    int count=0;
     while (t--)
     {
-        int a ,b,c;
-        cin>>a>>b>>c;
-        int sm=a+b+c;
-        if(sm>=2)
-        s++;
-
+        ll sum=0,n;
+        cin>>n;
+        ll arr[n];
+        for (ll i = 0; i < n; i++)
+        {
+            cin>>arr[i];
+            sum+=arr[i];
+        }
+        ll ans=sqrt(sum);
+        if(ans*ans==sum)
+        {
+            cout<<"YES"<<endl;
+        }
+        else 
+        cout<<"NO"<<endl;
+        
     }
-    cout<<s;
     return 0;
 }
