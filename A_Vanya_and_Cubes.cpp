@@ -39,16 +39,21 @@ int main()
     hk
     int n;
     cin>>n;
-  int used=0,height=0;
-  while(true)
-  {
-    height++;
-    int level=height*(height+1)/2;
-    if(used+level> n)
-    break;
-    used+=level;
-  }  
-    
-  cout<<height-1;
+    int height=0;
+    int sm=0;
+    while(true)
+    {
+      height++;
+      int level=height*(height+1)/2;
+      if(level+sm>n)
+      {
+        break;
+      }
+      else
+      {
+        sm+=level;
+      }
+    } 
+    cout<<height-1;
     return 0;
 }

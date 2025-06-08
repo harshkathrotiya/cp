@@ -1,27 +1,37 @@
-#include<stdio.h>
+#include<bits/stdc++.h>
 
-int main(){
-    int n;
-    printf("How many elements do you want to insert in the array?\n");
-    scanf("%d", &n);
-    int arr[n];
-    printf("Please enter the elements:\n");
-    for (int i=0; i<n;i++) {
-        scanf("%d",&arr[i]);
-    }
+using namespace std;
 
-    for(int i=0;i<n-1;i++) {
-        for (int j=0;j<n-i-1;j++) {
-            if (arr[j]>arr[j+1]) {
-                int temp=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
-            }
+int main()
+{
+
+    int arr[10]={1,2,4,2,1,3,5,7,6,4};
+    map<int ,int > mp;
+    int maxe,mine,maxf,minf;
+    for (int i = 0; i < 10; i++)    
+    {
+        if(mp.find(arr[i])==mp.end())
+        {
+            mp[arr[i]]=1;
+        }
+        else{
+            mp[arr[i]]++;
+        }
+        if(maxf<mp[arr[i]])
+        {
+            maxf=mp[arr[i]];
+            maxe=arr[i];
+        }
+        if(mp[arr[i]]<minf)
+        {
+            minf=mp[arr[i]];
+            mine=arr[i];
         }
     }
-
-    printf("largest elemlent is %d and second largest elemlentis %d\n",arr[n-1],arr[n-2]);
     
+
+cout<<" max frequency is "<<maxf <<" ele ment is "<<maxe<<endl;
+cout<<"min frequency is "<<minf<<" element is "<<mine;
 
     return 0;
 }

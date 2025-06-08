@@ -29,14 +29,11 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-    vi v;
     int a,b,c;
     cin>>a>>b>>c;
-    v.pb(a);
-    v.pb(b);
-    v.pb(c);
-    sort(v.begin(),v.end());
-    cout<<(v[1]-v[0])+(v[2]-v[1]);
-
+    int m=min(a,min(b,c));
+    int mx=max(a,max(b,c));
+    int mid=a+b+c-m-mx;
+    cout<<abs(a-mid)+abs(b-mid)+abs(c-mid);
     return 0;
 }

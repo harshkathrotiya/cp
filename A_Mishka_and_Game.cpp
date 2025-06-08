@@ -30,9 +30,9 @@ int main()
 {
     hk
     int t;
-    cin >> t;
+    cin>>t;
     int m=0,c=0;
-    while (t--)
+    while(t--)
     {
         int a,b;
         cin>>a>>b;
@@ -40,17 +40,12 @@ int main()
         m++;
         if(b>a)
         c++;
-        if(a==b)
-        {
-            m++;
-            c++;
-        }
     }
     if(m>c)
     cout<<"Mishka";
     else if(c>m)
     cout<<"Chris";
-    elseq
+    else 
     cout<<"Friendship is magic!^^";
     return 0;
 }
