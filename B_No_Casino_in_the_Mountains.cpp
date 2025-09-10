@@ -35,19 +35,28 @@ int main()
     {
         int n,k;
         cin>>n>>k;
-        vector<int> v(n),s;
-        for (int i = 0; i < n; i++)
+        vector<int> v(n);
+        for(int i=0;i<n;i++)
         {
             cin>>v[i];
         }
-        s=v;
-        sort(s.begin(),s.end());
-        if(k==1 && v!=s)
+        int ans=0,flg=0;
+        for(int i=0;i<n;i++)
         {
-            cout<<"NO"<<endl;
+           
+            if(v[i]==0)
+            flg++;
+            if(flg==k)
+            {
+                ans++;
+                flg=0;
+                i++;
+            }
+            if(v[i]==1)
+            flg=0;
+           
         }
-        else cout<<"YES"<<endl;
-        
+        cout<<ans<<endl;;
     }
     return 0;
 }

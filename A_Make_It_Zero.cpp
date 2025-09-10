@@ -33,21 +33,47 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n,k;
-        cin>>n>>k;
-        vector<int> v(n),s;
+        int n;
+        cin>>n;
+        vector<int> v(n);
+        int xr=0;
         for (int i = 0; i < n; i++)
         {
             cin>>v[i];
+            xr^=v[i];
         }
-        s=v;
-        sort(s.begin(),s.end());
-        if(k==1 && v!=s)
+        if(xr!=0)
         {
-            cout<<"NO"<<endl;
+            if(n%2==1)
+            {
+                cout<<2<<endl;
+                cout<<1<<" "<<n<<endl;
+                cout<<1<<" "<<n<<endl;
+            }
+            else{
+                cout<<4<<endl;
+                cout<<1<<" "<<n-1<<endl;
+                cout<<1<<" "<<n-1<<endl;
+                cout<<n-1<<" "<<n<<endl;
+                cout<<n-1<<" "<<n<<endl;
+            }
+            
         }
-        else cout<<"YES"<<endl;
+       else  if(n%2==1)
+        {
+            cout<<2<<endl;
+            cout<<1<<" "<<n<<endl;
+            cout<<1<<" "<<n<<endl;
+        }
+        else{
+            cout<<4<<endl;
+            cout<<1<<" "<<n-1<<endl;
+            cout<<2<<" "<<n-1<<endl;
+            cout<<n-1<<" "<<n<<endl;
+            cout<<n-1<<" "<<n<<endl;
+        }
         
+
     }
     return 0;
 }

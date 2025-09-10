@@ -33,21 +33,16 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n,k;
-        cin>>n>>k;
-        vector<int> v(n),s;
-        for (int i = 0; i < n; i++)
+        int n;
+        cin>>n;
+        int sm=INT_MAX;
+        while(n>0)
         {
-            cin>>v[i];
+            int d=n%10;
+            sm=min(sm,d);
+            n/=10;
         }
-        s=v;
-        sort(s.begin(),s.end());
-        if(k==1 && v!=s)
-        {
-            cout<<"NO"<<endl;
-        }
-        else cout<<"YES"<<endl;
-        
+        cout<<sm<<endl;
     }
     return 0;
 }

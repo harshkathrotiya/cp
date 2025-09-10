@@ -33,21 +33,28 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n,k;
-        cin>>n>>k;
-        vector<int> v(n),s;
-        for (int i = 0; i < n; i++)
+        string s;
+        cin>>s;
+        string ans="";
+        int f=0,n=0,t=0;
+        for(int i=0;i<s.size();i++)
         {
-            cin>>v[i];
+            if(s[i]=='F')
+            f++;
+            else if(s[i]=='N')
+            n++;
+            else if(s[i]=='T')
+            t++;
+            else
+            ans+=s[i];
         }
-        s=v;
-        sort(s.begin(),s.end());
-        if(k==1 && v!=s)
-        {
-            cout<<"NO"<<endl;
-        }
-        else cout<<"YES"<<endl;
-        
+        for(int i=0;i<t;i++)
+        ans+='T';
+        for(int i=0;i<n;i++)
+        ans+='N';
+        for(int i=0;i<f;i++)
+        ans+='F';
+        cout<<ans<<endl;
     }
     return 0;
 }

@@ -29,25 +29,42 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-    int t;
-    cin >> t;
-    while (t--)
+    int n,c;
+    cin>>n>>c;
+    vector<int> v(n),t(n);
+    for (int i = 0; i < n; i++)
     {
-        int n,k;
-        cin>>n>>k;
-        vector<int> v(n),s;
-        for (int i = 0; i < n; i++)
-        {
-            cin>>v[i];
-        }
-        s=v;
-        sort(s.begin(),s.end());
-        if(k==1 && v!=s)
-        {
-            cout<<"NO"<<endl;
-        }
-        else cout<<"YES"<<endl;
-        
+        cin>>v[i];
     }
+    for (int i = 0; i < n; i++)
+    {
+        cin>>t[i];
+    } 
+    int limarktime=0,limarktotal=0;
+    for (int i = 0; i < n; i++)
+    {
+        limarktime+=t[i];
+        limarktotal+=max(0,v[i]-(c*limarktime));
+    }
+// cout<<limarktotal<<endl;
+    int radetime=0,radetotal=0;
+    for(int i=n-1;i>=0;i--)
+    {
+        radetime+=t[i];
+        radetotal+=max(0,v[i]-(c*radetime));       
+    }
+   if(limarktotal>radetotal)
+   {
+        cout<<"Limak";
+   }
+   else if(radetotal>limarktotal)
+   {
+        cout<<"Radewoosh";
+   }
+   else
+   {
+        cout<<"Tie";
+   }
+  
     return 0;
 }

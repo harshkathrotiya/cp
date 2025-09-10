@@ -17,7 +17,6 @@ using namespace std;
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); it++)
 #define PI 3.1415926535897932384626
 #define mod 1000000007
-#define hk ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pl;
 typedef vector<int> vi;
@@ -26,28 +25,30 @@ typedef vector<pii> vpii;
 typedef vector<pl> vpl;
 typedef vector<vi> vvi;
 typedef vector<vl> vvl;
+void solve()
+{
+     int n;
+        cin>>n;
+       vector<int> v(n);
+    for(int &i:v)
+     cin>>i;
+    for (int i=0;i<n-1;i++) 
+    {
+        if(v[i]>v[i+1]) 
+        {
+            cout <<"YES"<<endl;
+            cout <<2<<endl;
+            cout <<v[i]<<" "<<v[i+1]<<endl;
+            return;
+        }
+    }
+    cout << "NO"<<endl;
+}
 int main()
 {
-    hk
-    int t;
+     int t;
     cin >> t;
-    while (t--)
-    {
-        int n,k;
-        cin>>n>>k;
-        vector<int> v(n),s;
-        for (int i = 0; i < n; i++)
-        {
-            cin>>v[i];
-        }
-        s=v;
-        sort(s.begin(),s.end());
-        if(k==1 && v!=s)
-        {
-            cout<<"NO"<<endl;
-        }
-        else cout<<"YES"<<endl;
-        
-    }
+    while(t--)
+    solve();
     return 0;
 }

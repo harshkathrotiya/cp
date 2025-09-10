@@ -33,21 +33,14 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n,k;
-        cin>>n>>k;
-        vector<int> v(n),s;
-        for (int i = 0; i < n; i++)
+        string s;int a,b;
+        cin>>s>>a>>b;
+        if(a>=2400 && a<b)
         {
-            cin>>v[i];
+            cout<<"YES";
+            return 0;
         }
-        s=v;
-        sort(s.begin(),s.end());
-        if(k==1 && v!=s)
-        {
-            cout<<"NO"<<endl;
-        }
-        else cout<<"YES"<<endl;
-        
     }
+    cout<<"NO";
     return 0;
 }

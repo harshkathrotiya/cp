@@ -33,21 +33,19 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n,k;
-        cin>>n>>k;
-        vector<int> v(n),s;
-        for (int i = 0; i < n; i++)
+        int n;
+        cin>>n;
+        string s;
+        cin>>s;
+        string t=s;
+        int tm=0;
+        sort(t.begin(),t.end());
+        for(int i=0;i<n;i++)
         {
-            cin>>v[i];
+            if(s[i]!=t[i])
+            tm++;
         }
-        s=v;
-        sort(s.begin(),s.end());
-        if(k==1 && v!=s)
-        {
-            cout<<"NO"<<endl;
-        }
-        else cout<<"YES"<<endl;
-        
+        cout<<tm/2<<endl;
     }
     return 0;
 }

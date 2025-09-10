@@ -34,24 +34,23 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n, k,max=0;
-        cin >> n >> k;
-        vi v,v1;
-        for (int i = 0; i < n; i++)
+        int n,x;
+        cin>>n>>x;
+        int ans=0;
+        vector<int> v(n+1);
+        v[0]=0;
+        for(int i=1;i<=n;i++)
         {
-            int x;
-            cin >> x;
-            v.pb(x);
+            cin>>v[i];
         }
-       
-    int max_dist_between_2_gas_station = max(v[0] - 0, 2 * (n - v[n - 1]));
-    for (int i = 1; i < n; i++) {
-        max_dist_between_2_gas_station =max(max_dist_between_2_gas_station, v[i] -v[i - 1]);
-    }
-    cout<<max_dist_between_2_gas_station;
-
-
-
+        for (int i = 0; i <n; i++)
+        {
+            int diff=v[i+1]-v[i];
+            ans=max(ans,diff);    
+        }
+        ans=max(ans,2*(x-v[n]));
+        cout<<ans<<endl;
+        
     }
     return 0;
 }

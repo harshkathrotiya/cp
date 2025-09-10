@@ -29,25 +29,16 @@ typedef vector<vl> vvl;
 int main()
 {
     hk
-    int t;
-    cin >> t;
-    while (t--)
+    int n,k;
+    cin>>n>>k;
+    int cnt=n;
+    for (int i = 0; i < n; i++)
     {
-        int n,k;
-        cin>>n>>k;
-        vector<int> v(n),s;
-        for (int i = 0; i < n; i++)
-        {
-            cin>>v[i];
-        }
-        s=v;
-        sort(s.begin(),s.end());
-        if(k==1 && v!=s)
-        {
-            cout<<"NO"<<endl;
-        }
-        else cout<<"YES"<<endl;
-        
+        int x;
+        cin>>x;
+        if(x>k)
+        cnt++;
     }
+    cout<<cnt;
     return 0;
 }
